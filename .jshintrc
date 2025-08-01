@@ -1,4 +1,6 @@
 {
-  "esversion": 8,
-  "node": true
-}
+    "asi": true,               // Allow missing semicolons
+    "dot-notation": false,     // Allow bracket notation
+    "esversion": 6             // Specify ECMAScript version (optional)
+  }
+  
