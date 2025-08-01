@@ -30,8 +30,8 @@ const Dealer = () => {
     });
     const retobj = await res.json();
     
-    if(retobj.status === 200) {
-      setDealer(retobj.dealer)
+    if (retobj.status === 200 && Array.isArray(retobj.dealer) && retobj.dealer.length > 0) {
+        setDealer(retobj.dealer[0]); // pick the first dealer object
     }
   }
 

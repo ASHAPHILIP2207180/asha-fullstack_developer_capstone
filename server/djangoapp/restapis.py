@@ -34,7 +34,12 @@ def analyze_review_sentiments(text):
     try:
         # Call get method of requests library with URL and parameters
         response = requests.get(request_url)
-        return response.json()
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print("Sentiment API error:", response.status_code)
+            return {"sentiment": "neutral"}
+
     except Exception as err:
         print(f"Unexpected {err=}, {type(err)=}")
         print("Network exception occurred")
